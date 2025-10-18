@@ -22,7 +22,7 @@ export default function MediaCapture({ mode, onCapture, onCancel, uploadStatus, 
   const [recordedChunks, setRecordedChunks] = useState<Blob[]>([])
   const [facingMode, setFacingMode] = useState<"user" | "environment">("environment")
 
-  const MAX_RECORDING_TIME = 20 // seconds
+  const MAX_RECORDING_TIME = 10 // seconds
 
   useEffect(() => {
     let interval: NodeJS.Timeout

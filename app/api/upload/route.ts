@@ -48,9 +48,10 @@ export async function POST(request: NextRequest) {
     const telegramEndpoint = type === "photo" ? "sendPhoto" : "sendVideo"
     const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/${telegramEndpoint}`
 
+    console.log(telegramUrl)
     console.log("[v0] Sending to Telegram:", { type, fileSize: file.size, fileName: file.name })
 
-    const response = await fetch(telegramUrl, {
+    const response: any = await fetch(telegramUrl, {
       method: "POST",
       body: telegramFormData,
     })
